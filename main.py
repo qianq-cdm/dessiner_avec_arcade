@@ -99,7 +99,6 @@ def main():
     arcade.finish_render()
     # Garder la fenêtre ouvert
     arcade.run()
-    pass
 
 
 main()
