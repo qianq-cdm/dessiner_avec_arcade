@@ -82,7 +82,6 @@ def main():
     arcade.start_render()
     # Dessiner le rectangle
     arcade.draw_lrtb_rectangle_filled(0, SCREEN_WIDTH, HEIGHT_SECOND_THIRD, 0, (99, 99, 102))
-    arcade.draw_lrtb_rectangle_filled(0, SCREEN_WIDTH, HEIGHT_SECOND_THIRD * 1.05, HEIGHT_SECOND_THIRD, (72, 72, 74))
     # Dessiner les fênetres à gauche de première étage
     draw_windows_ltr(SCREEN_WIDTH / 36, SCREEN_HEIGHT / 24,
                      HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
@@ -101,6 +100,15 @@ def main():
     arcade.draw_line(WIDTH_HALF + SCREEN_WIDTH / 6, 0,
                      WIDTH_HALF + SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD,
                      arcade.color.BEIGE, 15)
+    arcade.draw_triangle_filled(WIDTH_HALF, SCREEN_HEIGHT / 24 * 21,
+                                WIDTH_HALF - SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD,
+                                WIDTH_HALF + SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD,
+                                (99, 99, 102))
+    arcade.draw_lrtb_rectangle_filled(0, SCREEN_WIDTH, HEIGHT_SECOND_THIRD * 1.05, HEIGHT_SECOND_THIRD, (72, 72, 74))
+    roof_lines = [(WIDTH_HALF - SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD * 1.01),
+                  (WIDTH_HALF, SCREEN_HEIGHT / 24 * 21),
+                  (WIDTH_HALF + SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD * 1.01)]
+    arcade.draw_line_strip(roof_lines, (72, 72, 74), 20)
     # Finir de dessiner
     arcade.finish_render()
     # Garder la fenêtre ouvert
