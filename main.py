@@ -86,15 +86,21 @@ def main():
     # Dessiner les fênetres à gauche de première étage
     draw_windows_ltr(SCREEN_WIDTH / 36, SCREEN_HEIGHT / 24,
                      HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
-                     SCREEN_WIDTH / 32, 4)
+                     SCREEN_WIDTH / 32, 3)
     # Dessiner les fênetres à droite de première étage
     draw_windows_rtl(SCREEN_WIDTH / 36 * 35, SCREEN_HEIGHT / 24,
                      HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
-                     SCREEN_WIDTH / 32, 4)
+                     SCREEN_WIDTH / 32, 3)
     # Dessiner la porte
     arcade.draw_lrtb_rectangle_filled(WIDTH_HALF - SCREEN_WIDTH / 24, WIDTH_HALF + SCREEN_WIDTH / 24,
                                       HEIGHT_SECOND_THIRD / 3, HEIGHT_SECOND_THIRD / 24,
                                       (111, 67, 42))
+    arcade.draw_line(WIDTH_HALF - SCREEN_WIDTH / 6, 0,
+                     WIDTH_HALF - SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD,
+                     arcade.color.BEIGE, 15)
+    arcade.draw_line(WIDTH_HALF + SCREEN_WIDTH / 6, 0,
+                     WIDTH_HALF + SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD,
+                     arcade.color.BEIGE, 15)
     # Finir de dessiner
     arcade.finish_render()
     # Garder la fenêtre ouvert
