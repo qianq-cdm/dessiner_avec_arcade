@@ -2,6 +2,8 @@
 TP2 - Dessiner avec Arcade
 Par: Qian Qian
 Groupe: 407
+
+Ce programme dessine une image inspirée par l'image du Collège de Montréal
 """
 
 # Importer la librairie Arcade
@@ -90,6 +92,13 @@ def main():
     draw_windows_rtl(SCREEN_WIDTH / 36 * 35, SCREEN_HEIGHT / 24,
                      HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
                      SCREEN_WIDTH / 32, 3)
+    # Fenêtres de deuxième étage
+    draw_windows_ltr(SCREEN_WIDTH / 36, SCREEN_HEIGHT / 3,
+                     HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
+                     SCREEN_WIDTH / 32, 3)
+    draw_windows_rtl(SCREEN_WIDTH / 36 * 35, SCREEN_HEIGHT / 3,
+                     HEIGHT_SECOND_THIRD / 4, SCREEN_WIDTH / 15,
+                     SCREEN_WIDTH / 32, 3)
     # Dessiner la porte
     arcade.draw_lrtb_rectangle_filled(WIDTH_HALF - SCREEN_WIDTH / 24, WIDTH_HALF + SCREEN_WIDTH / 24,
                                       HEIGHT_SECOND_THIRD / 3, HEIGHT_SECOND_THIRD / 24,
@@ -109,6 +118,27 @@ def main():
                   (WIDTH_HALF, SCREEN_HEIGHT / 24 * 21),
                   (WIDTH_HALF + SCREEN_WIDTH / 6, HEIGHT_SECOND_THIRD * 1.01)]
     arcade.draw_line_strip(roof_lines, (72, 72, 74), 20)
+    # Dessiner la cercle
+    arcade.draw_circle_filled(WIDTH_HALF, HEIGHT_SECOND_THIRD * 1.15, 35, arcade.color.LIGHT_SKY_BLUE)
+    # Dessiner les arbres
+    arcade.draw_rectangle_filled(120, 60, 50, 150, arcade.csscolor.SIENNA)
+    arcade.draw_ellipse_filled(120, 210, 150, 200, arcade.csscolor.DARK_GREEN)
+    arcade.draw_rectangle_filled(300, 60, 50, 150, arcade.csscolor.SIENNA)
+    arcade.draw_arc_filled(300, 120, 150, 250, arcade.csscolor.DARK_GREEN, 0, 180)
+    arcade.draw_rectangle_filled(SCREEN_WIDTH - 300, 60, 50, 150, arcade.csscolor.SIENNA)
+    arcade.draw_ellipse_filled(SCREEN_WIDTH - 300, 210, 150, 200, arcade.csscolor.DARK_GREEN)
+    arcade.draw_rectangle_filled(SCREEN_WIDTH - 120, 60, 50, 150, arcade.csscolor.SIENNA)
+    arcade.draw_arc_filled(SCREEN_WIDTH - 120, 120, 150, 250, arcade.csscolor.DARK_GREEN, 0, 180)
+    # Dessiner les polygones
+    arcade.draw_polygon_filled(((WIDTH_HALF, 400),
+                                (WIDTH_HALF - 40, 360),
+                                (WIDTH_HALF - 25, 320),
+                                (WIDTH_HALF + 25, 320),
+                                (WIDTH_HALF + 40, 360)
+                                ),
+                               arcade.csscolor.LIGHT_SKY_BLUE)
+    # Texte
+    arcade.draw_text("Collège de Mont Réal", WIDTH_HALF - SCREEN_WIDTH / 16, HEIGHT_FIRST_THIRD - 50, arcade.color.BARBIE_PINK)
     # Finir de dessiner
     arcade.finish_render()
     # Garder la fenêtre ouvert
